@@ -22,6 +22,7 @@ export interface ClientOptions {
 	willQos?: QoS;	// only used when will is true
 	willRetainFlag?: boolean;	// only used when will is true
 	automaticReconnect?: boolean;	// android only
+	eventEmitter2Options?: ConstructorOptions
 }
 
 export interface Message {
