@@ -1,4 +1,4 @@
-import {EventEmitter2, Listener, OnOptions} from "eventemitter2";
+import {EventEmitter2, Listener, OnOptions, ConstructorOptions} from "eventemitter2";
 
 export type QoS = 0 | 1 | 2;
 
@@ -22,6 +22,7 @@ export interface ClientOptions {
 	willQos?: QoS;	// only used when will is true
 	willRetainFlag?: boolean;	// only used when will is true
 	automaticReconnect?: boolean;	// android only
+	eventEmitter2Options?: ConstructorOptions
 }
 
 export interface Message {

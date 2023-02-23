@@ -9,7 +9,7 @@ const emitter = new NativeEventEmitter(Mqtt);
 
 class MqttClient extends EventEmitter2 {
   constructor(options, clientRef) {
-    super();
+    super(options.eventEmitter2Options);
     this.options = options;
     this.clientRef = clientRef;
     this._emitterSubscription = emitter.addListener('mqtt_events', this._dispatchEvent.bind(this))
