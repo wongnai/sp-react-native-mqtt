@@ -17,7 +17,12 @@ class MqttClient extends EventEmitter2 {
 
   _dispatchEvent(data) {
     if(data && data.clientRef === this.clientRef && data.event){
-      this.emit(data.event, data.message);
+      try {
+        this.emit(data.event, data.message);
+      } catch (error) {
+        console.log('Prevent eventemitter error', error)
+      }
+      
     }
   }
 
